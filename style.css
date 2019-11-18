@@ -1,3 +1,4 @@
+/* réinitialisations de base, ne pas toucher */
 * {
     margin: 0;
     padding: 0;
@@ -11,40 +12,59 @@ div {
     page-break-inside:avoid;
 }
 
-/* Regular */
+/* liens vers la/les typo·s */
 @font-face {
     font-family: 'League Gothic';
-    src: url('fonts/leaguegothic-regular-webfont.eot');
-    src: url('fonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/leaguegothic-regular-webfont.woff') format('woff'),
-         url('fonts/leaguegothic-regular-webfont.ttf') format('truetype'),
-         url('fonts/leaguegothic-regular-webfont.svg#league_gothic_regularregular') format('svg');
+    src: url('fonts/leaguegothic-regular-webfont.woff2') format('woff2'),
+         url('fonts/leaguegothic-regular-webfont.woff') format('woff');
     font-weight: normal;
-    font-style: italic;
 }
 
 body {
-    font-family: "League Gothic";
+    font-family: 'League Gothic';
+    font-size: 40px;
+    text-align: center;
 }
-a, a:hover, a:focus, a:visited, a:active {
-    color: black;
+img {
+    width: 500px;
+    margin-top: 50px;
 }
-ul {
-    list-style: none;
+.titre{
+    margin-top: 50px;
 }
-.hidden {
-    display: none;
+
+/* RESPONSIVE */
+
+/* ÉCRAN SEULEMENT */
+@media screen {
+    .print-only {
+        display: none;
+    }
 }
-.menu {
-    position: absolute;
-    top: 0;
-    right: 0;
+
+/* ÉCRAN (VALEURS MINIMUM) */
+@media screen and (min-width: 480px) {
+
 }
-.menu ul {
-    float: left;
-    padding: 5px;
+/* ÉCRAN (VALEURS MAXIMUM) */
+@media screen and (max-width: 480px) {
+    .titre {
+        color: red;
+    }
 }
-.menu ul ul {
-	display: none;
-    padding: 0;
+
+/* IMPRESSION */
+
+@media print {
+    .titre {
+        color: blue;
+    }
+    .screen-only {
+        display: none;
+    }
+}
+
+@page {
+    size: 210mm 297mm;
+    margin: none;
 }
